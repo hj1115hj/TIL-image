@@ -12,6 +12,12 @@ a.txt # 특정 파일
 
 초반에는 일반적으로 개발 환경에서 자주 설정하는 내용은 [gitignore.io](https://gitignore.io) 에서 가져오는 것을 추천한다.
 
+아래의 검색창이 git이 ignore할 프로그램을 검색한다.
+
+
+
+![캡처](images/캡처.PNG)
+
 * `python` , `windows`, `jupyternotebook`
 
 ```
@@ -164,5 +170,71 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/python,windows,jupyternotebooks
+```
+
+> visualstudio code를 설치 한다.
+
+[vsc](https://code.visualstudio.com/)에서 다운로드 한 후 File>OpenForder에서 .git이 저장되어있는 폴더를 선택한다.
+
+위에 코드를 gitignore 파일을 만들어서 복사 붙여넣기 한다.
+
+위치는 다음과 같다 
+
+![image-20191226182544845](images/image-20191226182544845.png)
+
+### gitignore Test
+
+아래 위치에 ingore할 파일 aaa.xlsx을 생성 한다
+
+![image-20191226182951892](images/image-20191226182951892.png)
+
+gitignore 파일에 aaa.xlsx 입력후 저장한다. 이후 git status 를 입력하게 되면 아래와 같은 결과가 나오게 되는대 commit하지 않은 목록에 aaa.xlsx가 나타나지 않는 것을 확인 할수 있다.
+
+```bash
+$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.gitignore
+        deleted:    gitignore.md
+
+#commit 하지 않은 목록에 나타나지 않는다! 
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        images/
+
+
+```
+
+
+
+반대로 아래와 같이 test.txt 파일 생성후 git  status 명령을 입력하면 test.txt가 commit하지 않은 목록으로 나타나는 것을 확 인 할 수 있다.
+
+![image-20191226183541346](images/image-20191226183541346.png)
+
+
+
+```bash
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../.gitignore
+        deleted:    gitignore.md
+
+Untracked files:
+# commit 하지 않은 목록에 test.txt 파일이 나타났다
+  (use "git add <file>..." to include in what will be committed)
+        images/
+        test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
 ```
 
