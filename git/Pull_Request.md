@@ -33,4 +33,4 @@ Date:   Thu Dec 26 18:40:53 2019 +0900
 
 다음과 같이 상대방의 repository에서 pull request를 요청해 볼 수 는 있다.
 
-![image-20191226185159738](C:\Users\student\AppData\Roaming\Typora\typora-user-images\image-20191226185159738.png)
+![캡처4](images/캡처4.PNG)
